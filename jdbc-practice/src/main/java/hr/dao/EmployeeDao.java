@@ -26,7 +26,8 @@ public class EmployeeDao {
 				"select emp_no, first_name, last_name, date_format(hire_date, '%Y-%m-%d')" + 
 				"  from employees" +
 				" where first_name like ?" +
-				"    or last_name like ?";
+				"    or last_name like ?" +
+				" order by hire_date";
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setString(1, "%" + keyword + "%");
