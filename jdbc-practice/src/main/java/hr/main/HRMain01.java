@@ -19,15 +19,13 @@ public class HRMain01 {
 				break;
 			}
 			
-			List<EmployeeVo> list = new EmployeeDao().findByName(keyword);
+			List<EmployeeVo> list = new EmployeeDao().findByName(keyword, keyword); // 일부러 keyword 2개넣음.오류안나게할라고.임시방편.
 			for (EmployeeVo vo : list) {
 				System.out.println(
 						vo.getNo() + ":" + vo.getFirstName() + ":" + vo.getLastName() + ":" + vo.getHireDate());
-
+			
 			}
 		}
-		
 		scanner.close();
 	}
-
 }
