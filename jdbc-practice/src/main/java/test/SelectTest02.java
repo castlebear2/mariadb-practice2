@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class SelectTest02 {
 
 	public static void main(String[] args) {
-
+		search("pat");
 	}
 
 	public static void search(String keyword) {
@@ -20,7 +20,6 @@ public class SelectTest02 {
 		try {
 			Class.forName("org.mariadb.jdbc.Driver");
 
-			// employees가 DB이름인지 커넥션이름인지 모르것네
 			String url = "jdbc:mariadb://192.168.0.88:3307/employees?charset=utf8";
 			conn = DriverManager.getConnection(url, "hr", "hr");
 
@@ -68,5 +67,4 @@ public class SelectTest02 {
 			}
 		}
 	}
-
 }

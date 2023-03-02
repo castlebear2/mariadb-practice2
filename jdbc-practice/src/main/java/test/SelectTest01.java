@@ -22,7 +22,7 @@ public class SelectTest01 {
 			String url = "jdbc:mariadb://192.168.0.88:3307/employees?charset=utf8"; 
 			conn = DriverManager.getConnection(url, "hr", "hr");
 			
-			//3. Statement 생성 : 쿼리를 떄리기 위한 객체
+			//3. Statement 생성 : 쿼리를 전송을 위한 객체
 			stmt = conn.createStatement();
 			
 			//4. SQL 실행 : 그럼 쿼리가 있어야겠지?

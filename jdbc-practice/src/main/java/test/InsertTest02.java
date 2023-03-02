@@ -29,7 +29,7 @@ public class InsertTest02 {
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setString(1, deptName);
-			// 쿼리를 실행하는 코드. rs는 결과값을 받아주는 역할.
+			
 			int count = pstmt.executeUpdate();
 
 			result = count == 1;

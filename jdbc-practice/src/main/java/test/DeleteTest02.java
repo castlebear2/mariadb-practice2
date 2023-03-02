@@ -28,7 +28,7 @@ public class DeleteTest02 {
 
 			
 			pstmt.setLong(1, no); //binding
-			int count = pstmt.executeUpdate(sql);
+			int count = pstmt.executeUpdate();
 
 			result = count == 1;
 

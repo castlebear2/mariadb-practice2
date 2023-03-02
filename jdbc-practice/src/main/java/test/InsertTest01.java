@@ -19,17 +19,16 @@ public class InsertTest01 {
 		try {
 			Class.forName("org.mariadb.jdbc.Driver");
 
-			// employees가 DB이름인지 커넥션이름인지 모르것네
 			String url = "jdbc:mariadb://192.168.0.88:3307/webdb?charset=utf8";
 			conn = DriverManager.getConnection(url, "webdb", "webdb");
 
-			// 3. Statement 생성 : 쿼리를 떄리기 위한 객체
+			// 3. Statement 생성 : 쿼리 위한 객체
 			stmt = conn.createStatement();
 
-			// 4. SQL 실행 : 그럼 쿼리가 있어야겠지?
+			// 4. SQL 실행 : 그럼 쿼리가 있어야겠지.
 			String sql = "insert into dept values(null, '" + deptName + "')";
 
-			// 쿼리를 실행하는 코드. rs는 결과값을 받아주는 역할.
+			// 쿼리를 실행하는 코드
 			int count = stmt.executeUpdate(sql);
 
 			result = count == 1;
