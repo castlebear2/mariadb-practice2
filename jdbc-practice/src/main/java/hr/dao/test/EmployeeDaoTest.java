@@ -9,12 +9,13 @@ import hr.vo.EmployeeVo;
 public class EmployeeDaoTest {
 
 	public static void main(String[] args) {
-		testFindByName("pat");
+		testFindByName("38000", "39000");
 
+		
 	}
 
-	private static void testFindByName(String keyword) {
-		List<EmployeeVo> list = new EmployeeDao().findByName(keyword);
+	private static void testFindByName(String keyword1, String keyword2) {
+		List<EmployeeVo> list = new EmployeeDao().findByName(keyword1, keyword2);
 		for(EmployeeVo vo : list) {
 			System.out.println(vo);
 		}
