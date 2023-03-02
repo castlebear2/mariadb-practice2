@@ -7,10 +7,17 @@ public class EmployeeVo {
 	private String lastName;
 	private String gender;
 	private String hireDate;
+	private Long salary;
+	public Long getSalary() {
+		return salary;
+	}
+	public void setSalary(Long salary) {
+		this.salary = salary;
+	}
+
 	@Override
 	public String toString() {
-		return "EmployeeVo [no=" + no + ", birthDate=" + birthDate + ", firstName=" + firstName + ", lastName="
-				+ lastName + ", gender=" + gender + ", hireDate=" + hireDate + "]";
+		return "EmployeeVo [no=" + no + ", salary=" + salary + "]";
 	}
 	public Long getNo() {
 		return no;
