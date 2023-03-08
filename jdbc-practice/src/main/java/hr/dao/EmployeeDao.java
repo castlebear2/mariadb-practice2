@@ -10,7 +10,7 @@ import java.util.List;
 import hr.vo.EmployeeVo;
 
 public class EmployeeDao {
-	public List<EmployeeVo> findByName(String keyword1, String keyword2) {
+	public List<EmployeeVo> findByName(String keyword) {
 		List<EmployeeVo> result = new ArrayList<>();
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -23,28 +23,25 @@ public class EmployeeDao {
 			conn = DriverManager.getConnection(url, "hr", "hr");
 
 			String sql = 
-				"select emp_no, salary" + 
-				"  from salaries" +
-				" where salary >= ?" +
-				"    and salary <= ?" +
-				" order by salary";
+					"select emp_no, first_name, last_name, hire_date" +
+					" from employees"+
+					" where first_name like ?";
 			pstmt = conn.prepareStatement(sql);
 
-			pstmt.setString(1, keyword1);
-			pstmt.setString(2, keyword2);
+			pstmt.setString(1, "%"+ keyword + "%");
 			
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				Long no = rs.getLong(1);
-//				String firstName = rs.getString(2);
-//				String lastName = rs.getString(3);
-				Long salary = rs.getLong(2);
+				String firstName = rs.getString(2);
+				String lastName = rs.getString(3);
+				String hireDate = rs.getString(4);
 				
 				EmployeeVo vo = new EmployeeVo();
 				vo.setNo(no);
-//				vo.setFirstName(firstName);
-//				vo.setLastName(lastName);
-				vo.setSalary(salary);
+				vo.setFirstName(firstName);
+				vo.setLastName(lastName);
+				vo.setHireDate(hireDate);
 				
 				result.add(vo);
 			}
