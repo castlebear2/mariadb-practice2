@@ -3,23 +3,23 @@ package hr.main;
 import java.util.List;
 import java.util.Scanner;
 
-import hr.dao.EmployeeDao;
+import hr.dao.EmployeeDao02;
 import hr.vo.EmployeeVo;
 
 public class HRMain02 {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in); 
-
+ 
 		while (true) {
 			String keyword1 = scanner.nextLine();
 			String keyword2 = scanner.nextLine();
 		
-
+ 
 			if("quit".equals(keyword1)) {
 				break;
 			}
-			List<EmployeeVo> list = new EmployeeDao().findByName(keyword1, keyword2);
+			List<EmployeeVo> list = new EmployeeDao02().findSalary(keyword1, keyword2);
 		
 			
 			for (EmployeeVo vo : list) {
