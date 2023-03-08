@@ -13,6 +13,6 @@ public class EmployeeDaoTest {
 		
 		for(EmployeeVo vo : list) {
 			System.out.println(vo);
-		}
+		} 
 	}
 }
