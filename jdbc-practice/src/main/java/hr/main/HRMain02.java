@@ -14,8 +14,8 @@ public class HRMain02 {
 		while (true) {
 			String keyword1 = scanner.nextLine();
 			String keyword2 = scanner.nextLine();
-		
- 
+			
+			
 			if("quit".equals(keyword1)) {
 				break;
 			}
